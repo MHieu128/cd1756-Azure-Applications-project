@@ -7,7 +7,7 @@ class Config(object):
 
     BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'nffile'
     BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'Tbt6TOU78LSz1OPog3UKteQzFOhjh6rRtwPGdjOurK2cJO5R4N7Ac1wZ45yfQ66hokQ1iOnKq+zQ+AStWPiCrw=='
-    BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'nfblob'
+    BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
     SQL_SERVER = os.environ.get('SQL_SERVER') or 'udacity-project1.database.windows.net'
     SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'az-sql'
