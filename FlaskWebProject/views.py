@@ -66,10 +66,10 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
-            app.logger.info('Invalid username or password')
+            app.logger.critical('Invalid username or password')
             flash('Invalid username or password')
             return redirect(url_for('login'))
-        app.logger.info('Login Successful')
+        app.logger.critical('Login Successful')
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
@@ -102,7 +102,7 @@ def authorized():
 
 @app.route('/logout')
 def logout():
-    app.logger.info('User logout')
+    app.logger.critical('User logout')
     logout_user()
     if session.get("user"): # Used MS Login
         # Wipe out user and its token cache from session
